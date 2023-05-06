@@ -4,66 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson_3
+namespace Lesson_3_part_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int x4;
-            int y4;
-            Console.WriteLine("Введите координаты первой вершины");
-            int x1 = Convert.ToInt32(Console.ReadLine());
-            int y1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите координаты второй вершины");
-            int x2 = Convert.ToInt32(Console.ReadLine());
-            int y2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите координаты третьей вершины");
-            int x3 = Convert.ToInt32(Console.ReadLine());
-            int y3 = Convert.ToInt32(Console.ReadLine());
-            if ((x1 == x2 || x1 == x3 || x2 == x3) & (y1 == y2 || y1 == y3 || y2 == y3))
+            
+            Console.WriteLine("Укажите свой возраст:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int o = n % 10;
+            if (n>=20&n<=69) 
             {
-                if (x1 == x2)
+                switch (o)
                 {
-                    x4 = x3;
-                    Console.WriteLine("Координата Х4 ={0}", x4);
+                    case 1:
+                        {
+                            Console.WriteLine("Ваш возраст прекрасен! Вам {0} год!", n);
+                            break;
+                        }
+                    case 2:
+                    case 3:
+                    case 4:
+                        {
+                            Console.WriteLine("Чудесно! Вам {0} года!", n);
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Я знал, знал!!! Вам {0} лет!", n);
+                            break;
+                        }
                 }
-                if (x1 == x3)
-                {
-                    x4 = x2;
-                    Console.WriteLine("Координата Х4 ={0}", x4);
-                }
-
-                if (x2 == x3)
-
-                {
-                    x4 = x1;
-                    Console.WriteLine("Координата Х4 ={0}", x4);
-                }
-
-
-                if (y1 == y2)
-                {
-                    y4 = y3;
-                    Console.WriteLine("Координата Y4 ={0}", y4);
-                }
-                if (y1 == y3)
-                {
-                    y4 = y2;
-                    Console.WriteLine("Координата Y4 ={0}", y4);
-                }
-
-                if (y2 == y3)
-
-                {
-                    y4 = y1;
-                    Console.WriteLine("Координата Y4 ={0}", y4);
-                }
+                
             }
-            else { Console.WriteLine("Стороны прямоугольника не параллельны осям OX и OY"); }
+            else { Console.WriteLine("Ай-яй! Ваш возраст не находится в диаппазоне 20-69 лет! А у нас здесь своя песочница!"); }
 
 
             Console.ReadKey();
         }
     }
-}
+    }
+
+
